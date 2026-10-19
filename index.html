@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 📦 एक्सेल डाउनलोड करने के लिए SheetJS लाइब्रेरी (यह ज़रूरी है) -->
+    <script src="https://cloudflare.com"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cloudflare.com"></script>
+    <!-- यहाँ अपना पुराना जो भी लिस्ट या टेबल का कोड है, बिना किसी बदलाव के डाल दें -->
+  </head>
+  <body>
+    <section>
+      <div class="bda-page-wrapper">
+        <!-- फ़िल्टर पैनल और व्यू बदलने के बटन्स -->
+        <div class="bda-filter-panel">
+          <div class="bda-view-switcher">
+            <button
+              type="button"
+              id="btn-list-view"
+              class="bda-view-btn active"
+            >
+              📊 Grid View
+            </button>
+            <button type="button" id="btn-grid-view" class="bda-view-btn">
+              📝 List View
+            </button>
+          </div>
+        </div>
+        </section>
+        <section>
+
+        <!-- =================================================== -->
+        <!-- 🟥 कोड 1: आपका पूरा LIST VIEW (डिफ़ॉल्ट रूप से चालू) -->
+        <!-- =================================================== -->
+
+        <div id="bda-list-view-section" class="bda-view-block display-on">
+          <!-- यहाँ अपना पुराना जो भी लिस्ट या टेबल का कोड है, बिना किसी बदलाव के डाल दें -->
+
+          <div class="bda-page-wrapper">
+            <!-- 1. फ़िल्टर और लाइव सर्च पैनल -->
+            <div class="bda-filter-panel">
+              <!-- फ़िल्टर सेक्शंस (3-कॉलम ग्रिड लेआउट) -->
+              <div class="bda-filters-grid">
+                <!-- कॉलम 1: कंपनी फ़िल्टर -->
+                <div class="bda-filter-column">
+                  <span class="filter-label-text">🏢 कंपनी फ़िल्टर:</span>
+                  <div class="bda-checkbox-vertical">
+                    <label class="bda-check-lbl all-companies-highlight">
+                      <input
+                        type="checkbox"
+                        id="company-all"
+                        value="all"
+                        checked
+                      />
+                      <strong>All Companies</strong>
+                    </label>
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="company-single"
+                        value="jnj"
+                      />
+                      J&J</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="company-single"
+                        value="healthium"
+                      />
+                      Healthium</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="company-single"
+                        value="meril"
+                      />
+                      Meril Life</label
+                    >
+                  </div>
+                </div>
+
+                <!-- कॉलम 2: 10 कैटेगरीज फ़िल्टर -->
+                <div class="bda-filter-column">
+                  <span class="filter-label-text">📂 कैटेगरी फ़िल्टर:</span>
+                  <div class="bda-checkbox-vertical bda-category-list-scroll">
+                    <label class="bda-check-lbl all-categories-highlight">
+                      <input
+                        type="checkbox"
+                        id="category-all"
+                        value="all"
+                        checked
+                      />
+                      <strong>All Categories (सभी)</strong>
+                    </label>
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="spout-pouches"
+                      />
+                      Spout Pouches</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="standup-zippers"
+                      />
+                      Standup Zippers</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="press-lock-bags"
+                      />
+                      Press Lock Bags</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="cotton-bags"
+                      />
+                      Cotton Bags</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="slider-bags"
+                      />
+                      Slider Bags</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="vacuum-pouches"
+                      />
+                      Vacuum Pouches</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="paper-bags"
+                      />
+                      Paper Bags</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="non-woven-bags"
+                      />
+                      Non Woven Bags</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="box-pouches"
+                      />
+                      Box Pouches</label
+                    >
+                    <label class="bda-check-lbl"
+                      ><input
+                        type="checkbox"
+                        class="category-single"
+                        value="custom-packaging"
+                      />
+                      Custom Packaging</label
+                    >
+                  </div>
+                </div>
+
+                <!-- 🟩 कॉलम 3: सर्च बार ज़ोन (ग्रीन हाईलाइटेड लोकेटर एरिया) -->
+                <div class="bda-filter-column bda-search-green-zone">
+                  <span class="filter-label-text"
+                    >🔍 उत्पाद खोजें (Live Search):</span
+                  >
+                  <div class="bda-search-group">
+                    <input
+                      type="text"
+                      class="bda-input-search"
+                      placeholder="यहाँ नाम टाइप करें..."
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- एक्सेल और व्हाट्सएप बटन पैनल -->
+              <div class="bda-action-panel">
+                <button
+                  type="button"
+                  id="btn-download-excel"
+                  class="bda-btn-action btn-excel"
+                >
+                  📊 Save to Excel (PC)
+                </button>
+                <button
+                  type="button"
+                  id="btn-share-whatsapp"
+                  class="bda-btn-action btn-whatsapp"
+                >
+                  💬 Share via WhatsApp
+                </button>
+              </div>
+            </div>
+
+            <!-- 2. प्रोडक्ट ब्लॉक ग्रिड (इमेज की तरह) -->
+            <div class="bda-matrix-block-container">
+              <!-- प्रोडक्ट कार्ड्स यहाँ लोड होंगे -->
+
+              <div
+                class="bda-product-card"
+                data-brand="kala"
+                data-company="jnj"
+                data-category="spout-pouches"
+              >
+                <div class="bda-card-header">
+                  <div class="bda-select-item-wrap">
+                    <input type="checkbox" class="bda-product-select-check" />
+                    चुनें (Select)
+                  </div>
+                  <div class="bda-img-placeholder">📄</div>
+                  <h3 class="bda-brand-title">Transparent Spout Pouch</h3>
+                </div>
+                <div class="bda-action-section">
+                  <button type="button" class="bda-btn-more-info">
+                    Buying Options
+                  </button>
+                </div>
+                <div class="bda-card-body">
+                  <div class="bda-detail-row">
+                    <span class="bda-label">CATEGORY:</span
+                    ><span class="bda-value bda-cat-val">Spout Pouches</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">REVIEWS:</span
+                    ><span class="bda-value text-blue">(42)</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">NEEDLE'S PROFILE:</span
+                    ><span class="bda-value bda-needle-val"
+                      >3/8 Circle Reverse Cutting</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">SUTURE'S PROFILE:</span
+                    ><span class="bda-value bda-suture-val"
+                      >Poliglecaprone 25</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">MRP/(12PCS):</span
+                    ><span class="bda-value bda-price bda-mrp-val">₹1,450</span>
+                  </div>
+                </div>
+                <div class="bda-card-footer">
+                  <span class="company-badge badge-jnj">J&J</span>
+                </div>
+              </div>
+              <div
+                class="bda-product-card"
+                data-brand="Transparent Spout Pouch"
+                data-company="jnj"
+                data-category="spout-pouches"
+              >
+                <div class="bda-card-header">
+                  <div class="bda-select-item-wrap">
+                    <input type="checkbox" class="bda-product-select-check" />
+                    चुनें (Select)
+                  </div>
+                  <div class="bda-img-placeholder">📄</div>
+                  <h3 class="bda-brand-title">Transparent Spout Pouch</h3>
+                </div>
+                <div class="bda-action-section">
+                  <button type="button" class="bda-btn-more-info">
+                    Buying Options
+                  </button>
+                </div>
+                <div class="bda-card-body">
+                  <div class="bda-detail-row">
+                    <span class="bda-label">CATEGORY:</span
+                    ><span class="bda-value bda-cat-val">Spout Pouches</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">REVIEWS:</span
+                    ><span class="bda-value text-blue">(42)</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">NEEDLE'S PROFILE:</span
+                    ><span class="bda-value bda-needle-val"
+                      >3/8 Circle Reverse Cutting</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">SUTURE'S PROFILE:</span
+                    ><span class="bda-value bda-suture-val"
+                      >Poliglecaprone 25</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">MRP/(12PCS):</span
+                    ><span class="bda-value bda-price bda-mrp-val">₹1,450</span>
+                  </div>
+                </div>
+                <div class="bda-card-footer">
+                  <span class="company-badge badge-jnj">J&J</span>
+                </div>
+              </div>
+              <div
+                class="bda-product-card"
+                data-brand="Transparent Spout Pouch"
+                data-company="jnj"
+                data-category="spout-pouches"
+              >
+                <div class="bda-card-header">
+                  <div class="bda-select-item-wrap">
+                    <input type="checkbox" class="bda-product-select-check" />
+                    चुनें (Select)
+                  </div>
+                  <div class="bda-img-placeholder">📄</div>
+                  <h3 class="bda-brand-title">Transparent Spout Pouch</h3>
+                </div>
+                <div class="bda-action-section">
+                  <button type="button" class="bda-btn-more-info">
+                    Buying Options
+                  </button>
+                </div>
+                <div class="bda-card-body">
+                  <div class="bda-detail-row">
+                    <span class="bda-label">CATEGORY:</span
+                    ><span class="bda-value bda-cat-val">Spout Pouches</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">REVIEWS:</span
+                    ><span class="bda-value text-blue">(42)</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">NEEDLE'S PROFILE:</span
+                    ><span class="bda-value bda-needle-val"
+                      >3/8 Circle Reverse Cutting</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">SUTURE'S PROFILE:</span
+                    ><span class="bda-value bda-suture-val"
+                      >Poliglecaprone 25</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">MRP/(12PCS):</span
+                    ><span class="bda-value bda-price bda-mrp-val">₹1,450</span>
+                  </div>
+                </div>
+                <div class="bda-card-footer">
+                  <span class="company-badge badge-jnj">J&J</span>
+                </div>
+              </div>
+              <div
+                class="bda-product-card"
+                data-brand="Transparent Spout Pouch"
+                data-company="jnj"
+                data-category="spout-pouches"
+              >
+                <div class="bda-card-header">
+                  <div class="bda-select-item-wrap">
+                    <input type="checkbox" class="bda-product-select-check" />
+                    चुनें (Select)
+                  </div>
+                  <div class="bda-img-placeholder">📄</div>
+                  <h3 class="bda-brand-title">Transparent Spout Pouch</h3>
+                </div>
+                <div class="bda-action-section">
+                  <button type="button" class="bda-btn-more-info">
+                    Buying Options
+                  </button>
+                </div>
+                <div class="bda-card-body">
+                  <div class="bda-detail-row">
+                    <span class="bda-label">CATEGORY:</span
+                    ><span class="bda-value bda-cat-val">Spout Pouches</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">REVIEWS:</span
+                    ><span class="bda-value text-blue">(42)</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">NEEDLE'S PROFILE:</span
+                    ><span class="bda-value bda-needle-val"
+                      >3/8 Circle Reverse Cutting</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">SUTURE'S PROFILE:</span
+                    ><span class="bda-value bda-suture-val"
+                      >Poliglecaprone 25</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">MRP/(12PCS):</span
+                    ><span class="bda-value bda-price bda-mrp-val">₹1,450</span>
+                  </div>
+                </div>
+                <div class="bda-card-footer">
+                  <span class="company-badge badge-jnj">J&J</span>
+                </div>
+              </div>
+              <div
+                class="bda-product-card"
+                data-brand="Transparent Spout Pouch"
+                data-company="jnj"
+                data-category="spout-pouches"
+              >
+                <div class="bda-card-header">
+                  <div class="bda-select-item-wrap">
+                    <input type="checkbox" class="bda-product-select-check" />
+                    चुनें (Select)
+                  </div>
+                  <div class="bda-img-placeholder">📄</div>
+                  <h3 class="bda-brand-title">Transparent Spout Pouch</h3>
+                </div>
+                <div class="bda-action-section">
+                  <button type="button" class="bda-btn-more-info">
+                    Buying Options
+                  </button>
+                </div>
+                <div class="bda-card-body">
+                  <div class="bda-detail-row">
+                    <span class="bda-label">CATEGORY:</span
+                    ><span class="bda-value bda-cat-val">Spout Pouches</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">REVIEWS:</span
+                    ><span class="bda-value text-blue">(42)</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">NEEDLE'S PROFILE:</span
+                    ><span class="bda-value bda-needle-val"
+                      >3/8 Circle Reverse Cutting</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">SUTURE'S PROFILE:</span
+                    ><span class="bda-value bda-suture-val"
+                      >Poliglecaprone 25</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">MRP/(12PCS):</span
+                    ><span class="bda-value bda-price bda-mrp-val">₹1,450</span>
+                  </div>
+                </div>
+                <div class="bda-card-footer">
+                  <span class="company-badge badge-jnj">J&J</span>
+                </div>
+              </div>
+              <div
+                class="bda-product-card"
+                data-brand="Transparent Spout Pouch"
+                data-company="jnj"
+                data-category="spout-pouches"
+              >
+                <div class="bda-card-header">
+                  <div class="bda-select-item-wrap">
+                    <input type="checkbox" class="bda-product-select-check" />
+                    चुनें (Select)
+                  </div>
+                  <div class="bda-img-placeholder">📄</div>
+                  <h3 class="bda-brand-title">Transparent Spout Pouch</h3>
+                </div>
+                <div class="bda-action-section">
+                  <button type="button" class="bda-btn-more-info">
+                    Buying Options
+                  </button>
+                </div>
+                <div class="bda-card-body">
+                  <div class="bda-detail-row">
+                    <span class="bda-label">CATEGORY:</span
+                    ><span class="bda-value bda-cat-val">Spout Pouches</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">REVIEWS:</span
+                    ><span class="bda-value text-blue">(42)</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">NEEDLE'S PROFILE:</span
+                    ><span class="bda-value bda-needle-val"
+                      >3/8 Circle Reverse Cutting</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">SUTURE'S PROFILE:</span
+                    ><span class="bda-value bda-suture-val"
+                      >Poliglecaprone 25</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">MRP/(12PCS):</span
+                    ><span class="bda-value bda-price bda-mrp-val">₹1,450</span>
+                  </div>
+                </div>
+                <div class="bda-card-footer">
+                  <span class="company-badge badge-jnj">J&J</span>
+                </div>
+              </div>
+              <div
+                class="bda-product-card"
+                data-brand="Transparent Spout Pouch"
+                data-company="jnj"
+                data-category="spout-pouches"
+              >
+                <div class="bda-card-header">
+                  <div class="bda-select-item-wrap">
+                    <input type="checkbox" class="bda-product-select-check" />
+                    चुनें (Select)
+                  </div>
+                  <div class="bda-img-placeholder">📄</div>
+                  <h3 class="bda-brand-title">Transparent Spout Pouch</h3>
+                </div>
+                <div class="bda-action-section">
+                  <button type="button" class="bda-btn-more-info">
+                    Buying Options
+                  </button>
+                </div>
+                <div class="bda-card-body">
+                  <div class="bda-detail-row">
+                    <span class="bda-label">CATEGORY:</span
+                    ><span class="bda-value bda-cat-val">Spout Pouches</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">REVIEWS:</span
+                    ><span class="bda-value text-blue">(42)</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">NEEDLE'S PROFILE:</span
+                    ><span class="bda-value bda-needle-val"
+                      >3/8 Circle Reverse Cutting</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">SUTURE'S PROFILE:</span
+                    ><span class="bda-value bda-suture-val"
+                      >Poliglecaprone 25</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">MRP/(12PCS):</span
+                    ><span class="bda-value bda-price bda-mrp-val">₹1,450</span>
+                  </div>
+                </div>
+                <div class="bda-card-footer">
+                  <span class="company-badge badge-jnj">J&J</span>
+                </div>
+              </div>
+              <div
+                class="bda-product-card"
+                data-brand="Transparent Spout Pouch"
+                data-company="jnj"
+                data-category="spout-pouches"
+              >
+                <div class="bda-card-header">
+                  <div class="bda-select-item-wrap">
+                    <input type="checkbox" class="bda-product-select-check" />
+                    चुनें (Select)
+                  </div>
+                  <div class="bda-img-placeholder">📄</div>
+                  <h3 class="bda-brand-title">Transparent Spout Pouch</h3>
+                </div>
+                <div class="bda-action-section">
+                  <button type="button" class="bda-btn-more-info">
+                    Buying Options
+                  </button>
+                </div>
+                <div class="bda-card-body">
+                  <div class="bda-detail-row">
+                    <span class="bda-label">CATEGORY:</span
+                    ><span class="bda-value bda-cat-val">Spout Pouches</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">REVIEWS:</span
+                    ><span class="bda-value text-blue">(42)</span>
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">NEEDLE'S PROFILE:</span
+                    ><span class="bda-value bda-needle-val"
+                      >3/8 Circle Reverse Cutting</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">SUTURE'S PROFILE:</span
+                    ><span class="bda-value bda-suture-val"
+                      >Poliglecaprone 25</span
+                    >
+                  </div>
+                  <div class="bda-detail-row">
+                    <span class="bda-label">MRP/(12PCS):</span
+                    ><span class="bda-value bda-price bda-mrp-val">₹1,450</span>
+                  </div>
+                </div>
+                <div class="bda-card-footer">
+                  <span class="company-badge badge-jnj">J&J</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- =================================================== -->
+        <!-- 🟩 कोड 2: आपका पूरा GRID VIEW (नीचे आज़ाद रहेगा) -->
+        <!-- =================================================== -->
+
+        <div id="bda-grid-view-section" class="bda-view-block display-off">
+          <!-- Top Premium Corporate Header -->
+          <!--<div class="bda-pharma-header-banner">
+          <h2>Multi-Brand Surgical Profile Matrix</h2>
+        </div>-->
+
+          <!-- Live Selection Export Actions Center Control Hub -->
+          <div class="bda-export-action-bar">
+            <div class="export-counter-txt">
+              <i class="fas fa-check-square"></i>
+              <span id="checkedRowsCount">0</span> Products Selected
+            </div>
+            <div class="export-buttons-group">
+              <button
+                id="exportExcelBtn"
+                class="action-export-btn excel-theme"
+                disabled
+              >
+                <i class="fas fa-file-excel"></i> Save to PC (.XLSX)
+              </button>
+              <button
+                id="shareWhatsappBtn"
+                class="action-export-btn whatsapp-theme"
+                disabled
+              >
+                <i class="fab fa-whatsapp"></i> Share on WhatsApp
+              </button>
+            </div>
+          </div>
+
+          <!-- Main Dashboard Container Area -->
+          <div class="bda-pharma-dashboard-layout">
+            <!-- SIDEBAR VIEW: CATEGORIES & BRANDS SWITCH MULTI CHECKS -->
+            <aside class="bda-pharma-categories-sidebar">
+              <h3 class="sidebar-title">Product Categories</h3>
+              <ul class="categories-list">
+                <li class="category-item active-cat" data-category="all">
+                  <a href="#">Show All</a>
+                </li>
+                <li class="category-item" data-category="analgesics">
+                  <a href="#">Analgesics</a>
+                </li>
+                <li class="category-item" data-category="gastro">
+                  <a href="#">Gastro</a>
+                </li>
+                <li class="category-item" data-category="sutures">
+                  <a href="#">Surgical Sutures</a>
+                </li>
+              </ul>
+
+              <h3 class="sidebar-title company-section-title">
+                Filter by Company
+              </h3>
+              <div class="company-checkbox-wrapper">
+                <label class="company-check-label">
+                  <input
+                    type="checkbox"
+                    class="company-filter-checkbox"
+                    value="jnj"
+                    checked
+                  />
+                  <span class="company-custom-box"></span> Johnson & Johnson
+                </label>
+                <label class="company-check-label">
+                  <input
+                    type="checkbox"
+                    class="company-filter-checkbox"
+                    value="healthium"
+                    checked
+                  />
+                  <span class="company-custom-box"></span> Healthium
+                </label>
+                <label class="company-check-label">
+                  <input
+                    type="checkbox"
+                    class="company-filter-checkbox"
+                    value="lotus"
+                    checked
+                  />
+                  <span class="company-custom-box"></span> Lotus Surgical
+                </label>
+                <label class="company-check-label">
+                  <input
+                    type="checkbox"
+                    class="company-filter-checkbox"
+                    value="meril"
+                    checked
+                  />
+                  <span class="company-custom-box"></span> Meril Life
+                </label>
+              </div>
+            </aside>
+
+            <!-- MAIN DATA VIEWPORT PANEL -->
+            <main class="bda-pharma-main-content">
+              <div class="bda-pharma-search-wrapper">
+                <i class="fas fa-search search-bar-icon"></i>
+                <input
+                  type="text"
+                  id="pharmaLiveSearchInput"
+                  placeholder="Search by Brand, Molecule or Profile content..."
+                />
+              </div>
+
+              <div class="bda-pharma-table-viewport">
+                <table class="bda-pharma-data-table" id="pharmaCoreTable">
+                  <thead>
+                    <tr>
+                      <th style="width: 5%; text-align: center">
+                        <input type="checkbox" id="selectAllPharmaRows" />
+                      </th>
+                      <th style="width: 18%">BRAND</th>
+                      <th style="width: 25%">NEEDLE'S PROFILE</th>
+                      <th style="width: 22%">SUTURE'S PROFILE</th>
+                      <th style="width: 14%">COMPOSITION</th>
+                      <th style="width: 8%">MRP/(12PCS)</th>
+                      <th style="width: 8%; text-align: center">ACTION</th>
+                    </tr>
+                  </thead>
+                  <tbody id="pharmaTableBodyRows">
+                    <!-- Item 1 -->
+                    <tr data-prod-cat="analgesics" data-company="jnj">
+                      <td style="text-align: center">
+                        <input type="checkbox" class="row-select-input" />
+                      </td>
+                      <td class="brand-name-bold">MONOCRYL Ultra</td>
+                      <td>3/8 Circle Reverse Cutting</td>
+                      <td>Poliglecaprone 25 Unbraided</td>
+                      <td class="composition-text-primary">Deflazacort-6mg</td>
+                      <td>₹1,450</td>
+                      <td style="text-align: center">
+                        <a href="#" class="row-view-details">View More</a>
+                      </td>
+                    </tr>
+                    <!-- Item 2 -->
+                    <tr data-prod-cat="analgesics" data-company="healthium">
+                      <td style="text-align: center">
+                        <input type="checkbox" class="row-select-input" />
+                      </td>
+                      <td class="brand-name-bold">TRUGLYDE</td>
+                      <td>1/2 Circle Taper Point</td>
+                      <td>Polyglycolic Acid Violet Braided</td>
+                      <td class="composition-text-primary">Deflazacort 6mg</td>
+                      <td>₹850</td>
+                      <td style="text-align: center">
+                        <a href="#" class="row-view-details">View More</a>
+                      </td>
+                    </tr>
+                    <!-- Item 3 -->
+                    <tr data-prod-cat="gastro" data-company="lotus">
+                      <td style="text-align: center">
+                        <input type="checkbox" class="row-select-input" />
+                      </td>
+                      <td class="brand-name-bold">MENDIL Fix</td>
+                      <td>Straight Cutting Profile</td>
+                      <td>Premium Non-Absorbable Silk</td>
+                      <td class="composition-text-primary">
+                        Pantoprazole 40mg
+                      </td>
+                      <td>₹620</td>
+                      <td style="text-align: center">
+                        <a href="#" class="row-view-details">View More</a>
+                      </td>
+                    </tr>
+                    <!-- Item 4 -->
+                    <tr data-prod-cat="sutures" data-company="meril">
+                      <td style="text-align: center">
+                        <input type="checkbox" class="row-select-input" />
+                      </td>
+                      <td class="brand-name-bold">MITSU Polymer</td>
+                      <td>1/2 Circle Round Body Matrix</td>
+                      <td>Polyglactin 910 Braided Coated</td>
+                      <td class="composition-text-primary">Surgical-Alu</td>
+                      <td>₹980</td>
+                      <td style="text-align: center">
+                        <a href="#" class="row-view-details">View More</a>
+                      </td>
+                    </tr>
+                    <!-- Item 5 -->
+                    <tr data-prod-cat="analgesics" data-company="meril">
+                      <td style="text-align: center">
+                        <input type="checkbox" class="row-select-input" />
+                      </td>
+                      <td class="brand-name-bold">MERIL Suture A</td>
+                      <td>3/8 Tapercut Premium Profile</td>
+                      <td>Absorbable Monofilament Base</td>
+                      <td class="composition-text-primary">
+                        Paracetamol-650mg
+                      </td>
+                      <td>₹740</td>
+                      <td style="text-align: center">
+                        <a href="#" class="row-view-details">View More</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div id="noPharmaResultsMessage" class="bda-no-results-alert">
+                  No profiles match the selected filters.
+                </div>
+              </div>
+            </main>
+          </div>
+
+          <!-- Cache-busting URL code connection syntax to enforce fresh initialization -->
+
+          <!-- यहाँ अपना नया कार्ड/ब्लॉक स्टाइल ग्रिड का पूरा कोड पेस्ट कर दें -->
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

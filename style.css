@@ -1,0 +1,1464 @@
+/* व्यू बटन्स का डिज़ाइन */
+.bda-view-switcher {
+    margin-bottom: 1.5rem;
+}
+.bda-view-btn {
+    padding: 10px 20px;
+    border: 1px solid #cbd5e0;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 6px;
+}
+.bda-view-btn.active {
+    background: #00bfb3;
+    color: white;
+    border-color: #00bfb3;
+}
+
+/* 🔒 मुख्य कंट्रोलर क्लासेस */
+.bda-view-block {
+    width: 100%;
+}
+
+/* चालू करने की क्लास */
+.display-on {
+    display: block !important;
+}
+
+/* पूरी तरह गायब करने की क्लास (यह कोड को लोड तो रखेगा पर स्क्रीन से हटा देगा) */
+.display-off {
+    display: none !important;
+}
+/*========================================================================*/
+/*                            GRID VIEW CSS STARTS
+/*========================================================================*/
+.bda-page-wrapper {
+    
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.bda-filter-panel {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+}
+
+/* 🟩 3 कॉलम फ़िल्टर ग्रिड: कंपनी, कैटेगरी और सर्च बार अगल-बगल */
+.bda-filters-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1.5fr; 
+    gap: 2rem;
+    border-top: 1px solid #edf2f7;
+    padding-top: 1.25rem;
+    margin-bottom: 1.5rem;
+    align-items: start;
+}
+
+.bda-filter-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* ग्रीन ज़ोन में सर्च बार इनपुट स्टाइल */
+.bda-search-green-zone {
+    width: 100%;
+}
+
+.bda-input-search {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.bda-input-search:focus {
+    border-color: #25d366; /* ग्रीन फोकस इफ़ेक्ट */
+    box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.15);
+}
+
+.filter-label-text {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #2d3748;
+}
+
+.bda-checkbox-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.bda-category-list-scroll {
+    max-height: 160px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.bda-check-lbl {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #4a5568;
+    cursor: pointer;
+}
+
+.all-companies-highlight, .all-categories-highlight {
+    color: #00bfb3;
+}
+
+/* एक्शन पैनल */
+.bda-action-panel {
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid #edf2f7;
+    padding-top: 1.25rem;
+}
+
+.bda-btn-action {
+    padding: 11px 22px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-excel { background-color: #1f7246; color: white; }
+.btn-excel:hover { background-color: #154c2e; }
+.btn-whatsapp { background-color: #25d366; color: white; }
+.btn-whatsapp:hover { background-color: #1bd75b; }
+
+/* ग्रिड ब्लॉक्स */
+.bda-matrix-block-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.bda-product-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.bda-brand-title { font-size: 1.15rem; font-weight: 700; text-align: center; margin: 0; }
+.bda-btn-more-info { width: 100%; background: transparent; color: #4a5568; border: 1px solid #cbd5e0; padding: 10px 16px; border-radius: 25px; font-weight: 600; cursor: pointer; }
+.bda-btn-more-info:hover { background: #00bfb3; color: white; border-color: #00bfb3; }
+.bda-card-body { font-size: 0.88rem; display: flex; flex-direction: column; gap: 0.75rem; border-top: 1px solid #f7fafc; padding-top: 1.25rem; }
+.bda-detail-row { display: flex; flex-direction: column; gap: 2px; }
+.bda-label { font-size: 0.75rem; font-weight: 700; color: #a0aec0; }
+.bda-value { color: #4a5568; font-weight: 500; }
+.bda-price { color: #2b6cb0; font-weight: 700; font-size: 1.1rem; }
+.bda-card-footer { border-top: 1px solid #edf2f7; padding-top: 0.75rem; text-align: right; }
+.company-badge { font-size: 0.75rem; font-weight: 600; padding: 3px 10px; border-radius: 4px; }
+.badge-jnj { background: #fee2e2; color: #dc2626; }
+
+/* 📱 मोबाइल रिस्पॉन्सिव */
+/* 📱 मोबाइल और टैबलेट रिस्पॉन्सिव (Small Screens) */
+@media (max-width: 950px) {
+    /* 1. पूरे फ़िल्टर पैनल को एक वर्टिकल फ्लो में लाएं */
+    .bda-filter-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* 2. फ़िल्टर्स ग्रिड को फ्लेक्स में बदलें ताकि क्रम (order) बदला जा सके */
+    .bda-filters-grid {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: none; /* ग्रिड हटाकर फ्लेक्स लागू किया */
+        gap: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    /* 3. कंपनी और कैटेगरी फ़िल्टर को सबसे ऊपर रखें */
+    .bda-filters-grid .bda-filter-column:nth-child(1) {
+        order: 1; /* कंपनी फ़िल्टर पहले नंबर पर */
+    }
+    .bda-filters-grid .bda-filter-column:nth-child(2) {
+        order: 2; /* कैटेगरी फ़िल्टर दूसरे नंबर पर */
+    }
+
+    /* 4. बटन्स वाले पैनल को तीसरे नंबर पर लाएं */
+    .bda-action-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        order: 3; /* बटन्स अब फ़िल्टर्स के ठीक नीचे आएंगे */
+        border-top: none;
+        padding-top: 0;
+    }
+
+    /* 5. 🟩 सर्च बार को सबसे नीचे व्हाट्सएप बटन के बाद सेट करें */
+    .bda-filters-grid .bda-search-green-zone {
+        order: 4; /* यह पूरे पैनल में सबसे नीचे व्हाट्सएप बटन के नीचे आ जाएगा */
+        border-top: 1px dashed #edf2f7;
+        padding-top: 1rem;
+    }
+
+    /* 6. प्रोडक्ट ग्रिड मोबाइल में हमेशा 100% विड्थ पर रहेगा */
+    .bda-matrix-block-container {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+    }
+}
+/*========================================================================*/
+/*                            GRID VIEW CSS ENDS
+/*========================================================================*/
+/*========================================================================*/
+/*                            LIST VIEW CSS STARTS
+/**************************************************************************/
+ :root {
+        --bda-global-nav-color:  #1a2238;
+        --text-header: #f9fbfd;
+        --text-footer: #f9fbfd;
+        --ramba-secion-color: #f9fbfd;
+        --bg-color: #f9fbfd;
+        --text-main: #ff4500;
+        --text-muted: #1a2238;
+        --border-color: #eeeeee;
+        --font-serif: "Playfair Display", Georgia, serif;
+        --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+        --container-max-width: 1200px; /* वेबसाइट के मुख्य कंटेंट की अधिकतम चौड़ाई */
+        --primary-color: #1a2238;   /* Deep Blue Theme */
+        --accent-color: #ff4500;    /* Vibrant Action Orange */
+        --text-dark: #333333;
+        --text-light: #666666;
+        --bg-light: #f9fbfd;
+        --white: #ffffff;
+        --error-red: #ef4444;
+        --success-green: #22c55e;
+        --bda-hamburger: #1a2238;
+        --bda-nav-container: #1a2238;
+        /* 1. Define the variables globally */
+        --main-margin-left: 10px;
+        --main-margin-right: 10px;
+        --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+
+      * {
+        box-sizing: border-box;
+        margin: 0 0px 0 0px;
+        padding: 0;
+      }
+
+      .body {
+        font-family: var(--font-sans);
+        background-color: var(--bda-global-nav-color);
+        color: var(--text-main);
+        line-height: 1.7;
+        padding: 0;
+      }
+    /*========================================================================
+                    BIHAR DRUGS AGENCY (BDA) - HEADER PAGE STARTS
+     ========================================================================*/
+/* --- 1. Top Navbar Styling --- */
+.bda-global-nav {
+    /* 2. Apply the variables to your elements */
+    background-color: var(--bda-global-nav-color);
+    padding: 1.5rem 0 ;
+    position: fixed ;
+    top: 0 ;
+    left: 0;
+    z-index: 10001 ;
+    width: 100% ;
+}
+.bda-nav-container {
+    max-width: 1200px ;
+    margin: 0 auto ;
+    padding: 0 1.5rem ;
+    display: flex ;
+    justify-content: space-between ;
+    align-items: center ;
+    box-sizing: border-box ;
+}
+.bda-brand-logo {
+    color: #ffffff ;
+    font-size: 1.75rem ;
+    font-weight: 800 ;
+    text-decoration: none ;
+    letter-spacing: 1px ;
+}
+
+.bda-nav-menu {
+    display: flex ;
+    list-style: none ;
+    gap: 1.75rem ;
+    margin: 0 ;
+    padding: 0 ;
+}
+
+.bda-nav-menu a {
+    color: var(--bg-light);
+    text-decoration: none ;
+    font-weight: 500 ;
+    font-size: 22px ;
+    /*opacity: 0.85 ;*/
+    transition: all 0.8s ease ; 
+    text-align: center;
+}
+.bda-nav-menu a:hover, 
+.bda-nav-menu a.bda-active {
+    opacity: 1 ;
+    border-radius: 8px;
+    padding-bottom: 4px ;
+    /*border: 2px solid #d71920;*/
+    color: var(--accent-color);
+}
+@media (max-width: 768px) {
+   .bda-nav-menu { display: none ; }
+}
+/* --- Hemberg Buttun Style (it will be hiden by defalt in large screen) --- */
+.bda-hamburger {
+    display: none ;
+    flex-direction: column ;
+    justify-content: space-between ;
+    width: 30px ;
+    height: 21px ;
+    background: transparent ;
+    border: none ;
+    cursor: pointer ;
+    padding: 0 ;
+    z-index: 10001 ;
+}
+
+.bda-hamburger span {
+    width: 100% ;
+    height: 3px ;
+    background-color:var(--bda-global-nav-color);
+    border-radius: 2px ;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) ;
+}
+
+/* --- 📱 Mobile screen's Responsive Rules  --- */
+@media (max-width: 768px) {
+    .bda-hamburger {
+        display: flex ; /* Hembuerg button Will show */
+    }
+
+    /* in Mobile menu will be drop down type in sparate box  */
+    body .bda-nav-menu {
+        display: flex ;
+        flex-direction: column ;
+        position: absolute ;
+        top: 100% ;
+        left: 0 ;
+        width: 100% ;
+        background-color: var(--accent-color); 
+        padding: 0 ;
+        gap: 0 ;
+        max-height: 0 ; 
+        overflow: hidden ;
+        transition: max-height 0.2s cubic-bezier(0.4, 0, 0.2, 1) ; /* Smooth Opening*/
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1) ;
+    }
+
+    body .bda-nav-menu li {
+        width: 100% ;
+        border-top: 1px solid var(--accent-color);
+    }
+
+    body .bda-nav-menu a {
+        display: block ;
+        padding: 1.25rem 1.5rem ;
+        width: 100% ;
+    }
+
+    body .bda-nav-menu a:hover, 
+    body .bda-nav-menu a.bda-active {
+        background-color: var(--accent-color);
+        border-bottom: none ;
+        padding-bottom: 1.25rem ;
+        color: var(--bg-color);
+    }
+
+    /* --- 🌟 JAvscript se active classes --- */
+    
+    /* When Menu will open (Max-height will get Greater) */
+    body .bda-nav-menu.bda-menu-open {
+        max-height: 400px ; 
+    }
+
+    /* Animation for turning Hmeburg to 'x' */
+    .bda-hamburger.bda-close-toggle span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg) ;
+    }
+    .bda-hamburger.bda-close-toggle span:nth-child(2) {
+        opacity: 0 ; 
+    }
+    .bda-hamburger.bda-close-toggle span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg) ;
+    }
+}
+
+.bda-nav-container {
+    max-width: 1200px ;
+    margin: 0 auto ;
+    padding: 0 1.5rem ;
+    display: flex ;
+    align-items: center ;
+    box-sizing: border-box ;
+}
+
+/* logo and Links to be kept left side (setting) */
+.bda-brand-logo {
+    color: var(--auth-bg-light) ;
+    text-decoration: none ;
+    letter-spacing: 2px ;
+    margin-right: 2rem ;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.bda-nav-menu {
+    display: flex ;
+    list-style: none ;
+    gap: 1.5rem ;
+    margin: 0 ;
+    padding: 0 ;
+    flex-grow: 1 ; 
+}
+
+.bda-nav-menu a:hover, 
+.bda-nav-menu a.bda-active {
+    opacity: 1 ;
+    border-bottom: 2px solid var(--bg-light);
+    padding-bottom: 4px ;
+}
+
+/* --- 2. Desktop Search Bar with orange Button --- */
+.bda-search-wrapper {
+    position: relative ;
+}
+
+.bda-mobile-search-trigger {
+    display: none ; /* on Desktop Mobile icon will hide */
+}
+
+.bda-search-form {
+    display: flex ;
+    align-items: center ;
+    border: 2px solid var(--auth-bg-light);
+    background-color: transparent ;
+    border-radius: 2px ;
+    overflow: hidden ;
+    height: 40px;
+    min-width: 18%;
+}
+
+.bda-search-input {
+    background-color: var(--bda-global-nav-color);
+    border: none ;
+    padding: 0.4rem 0.75rem ;
+    color: var(--auth-bg-light);
+    font-size: 0.9rem ;
+    outline: none ;
+    width: 180px ;
+}
+
+.bda-search-input::placeholder {
+    color: var(--auth-bg-light);
+    opacity: 0.7 ;
+}
+
+.bda-search-btn {
+    background-color: #ff3d00 ; 
+    color: var(--auth-bg-light);
+    padding: 15px;
+    cursor: pointer ;
+    font-size: 17px ;
+    display: flex ;
+    align-items: center ;
+    justify-content: center ;
+}
+
+/* --- 3. Hemberg Button Base Design--- */
+.bda-hamburger {
+    display: none ;
+    flex-direction: column ;
+    justify-content: space-between ;
+    width: 24px ;
+    height: 18px ;
+    background: transparent ;
+    border: none ;
+    cursor: pointer ;
+    padding: 0 ;
+}
+
+.bda-hamburger span {
+    width: 100% ;
+    height: 2.5px ;
+    background-color: var(--bg-color);
+    border-radius: 2px ;
+    transition: all 0.2s ease ;
+    
+}
+/* --- 📱 4. Mobile Tablet screen Responsive Rules --- */
+@media (max-width: 768px) {
+    .bda-nav-container {
+        justify-content: space-between ; 
+    }
+
+    /* Hemburg Will show left side */
+    .bda-hamburger {
+        display: flex ;
+        order: 1 ;
+    }
+
+    /* Logo will come in middle */
+    .bda-brand-logo {
+        order: 2 ;
+        margin: 0 auto ;
+        position: absolute ;
+        left: 50% ;
+        transform: translateX(-50%) ;
+    }
+
+    /* Search raper will be Right side  */
+    .bda-search-wrapper {
+        order: 3 ;
+    }
+
+    /* On Mobile Inplace of Search bar only Search Icin Will show */
+    .bda-mobile-search-trigger {
+        display: block ;
+        background: transparent ;
+        border: none ;
+        color: #ffffff ;
+        font-size: 1.25rem ;
+        cursor: pointer ;
+    }
+
+    /* Mobile Search Form  will be hidden when triggered will show below */
+    body .bda-search-form {
+        display: none;
+        position: absolute !important;
+        top: 100%;
+        right: 0;
+        background-color: #f9fbfd;
+        width: 220px;
+        margin-top: 0.75rem;
+        border: 1px solid #f9fbfd;
+        box-shadow: 0 4px 10px rgba(212, 8, 8, 0.2);
+    }
+
+    /* When java script Class will be Activated then Mobile search Box will show */
+    body .bda-search-form.bda-search-open {
+        display: flex;
+    }
+
+    body .bda-search-input {
+        width: 100% ;
+        padding: 0.5rem ;
+    }
+
+    /* Mobile Slide Down menu links */
+    body .bda-nav-menu {
+        display: flex ;
+        flex-direction: column ;
+        position: absolute ;
+        top: 100% ;
+        left: 0 ;
+        width: 100% ;
+        background-color: var(--bda-global-nav-color);
+        padding: 0 ;
+        gap: 0 ;
+        max-height: 0 ;
+        overflow: hidden ;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1) ;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1) ;
+    }
+
+    body .bda-nav-menu li {
+        width: 100% ;
+        border-top: 1px solid rgba(255,255,255,0.05) ;
+        
+
+    }
+
+    body .bda-nav-menu a {
+        display: block ;
+        padding: 1.25rem 1.5rem ;
+    }
+
+    body .bda-nav-menu.bda-menu-open {
+        max-height: 400px ;
+    }
+    @media (max-width: 768px) {
+    /* from will be hiden by defalt in mobile  */
+    body .bda-search-form {
+        display: none ;
+        position: fixed ;
+        top: 100% ;
+        right: 0 ;
+        background-color: var(--bda-global-nav-color);
+        width: 220px ;
+        margin-top: 0.75rem ;
+        border: 1px solid var(--text-footer);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2) ;
+        border-radius: 4px ;
+        overflow: hidden ;
+    }
+
+    /* 🌟 on activation of class by java script form will show */
+    body .bda-search-form.bda-search-open {
+        display: flex ; /* Attention hera display must be flex */
+    }
+}
+
+
+    /* Hemburg to close & turn into 'x' mark */
+    .bda-hamburger.bda-close-toggle span:nth-child(1) { transform: translateY(7.5px) rotate(45deg) ; }
+    .bda-hamburger.bda-close-toggle span:nth-child(2) { opacity: 0 ; }
+    .bda-hamburger.bda-close-toggle span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg) ; }
+}
+/*=========================================================================*/
+    /*BIHAR DRUGS AGENCY (BDA) - NEW HEADER FRAMEWORk ENDS  ========= */
+/*=========================================================================*/  
+    /*========================================================================
+             BIHAR DRUGS AGENCY (BDA) - PRODUCTS MATRIX PAGE STARTS
+  ========================================================================*/
+
+:root {
+    --pharma-purple: #6a1b9a;      /* स्क्रीनशॉट का सटीक डार्क पर्पल थीम कलर */
+    --pharma-pink-text: #d81b60;  /* एक्टिव कैटेगरी का मैजेंटा पिंक कलर */
+    --pharma-bg-light: #fdfdfd;
+    --pharma-border-color: #e5e7eb;
+    --pharma-txt-main: #1f2937;
+    --pharma-txt-muted: #4b5563;
+    --pharma-font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Banner Typography Setup */
+.bda-pharma-header-banner {
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--pharma-border-color);
+    font-family: var(--pharma-font-family);
+}
+
+.bda-pharma-header-banner h2 {
+   font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--pharma-txt-main);
+    margin: 0;
+    letter-spacing: -0.5px;
+   
+   
+    
+}
+
+/* Master Layout Framework Grid Grid */
+.bda-pharma-dashboard-layout {
+    max-width: 1350px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 260px 1fr; /* बाईं तरफ फिक्स कैटेगरी, दाईं तरफ पूरी लिस्ट */
+    gap: 10px;
+    font-family: var(--pharma-font-family);
+}
+
+/* --- Left Sidebar Component Rules --- */
+.bda-pharma-categories-sidebar {
+    background: #ffffff;
+    border: 1px solid var(--pharma-border-color);
+    border-radius: 12px;
+    padding: 24px 16px;
+    height: max-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+}
+
+.bda-pharma-categories-sidebar .sidebar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--pharma-purple);
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid #f3e5f5;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.categories-list {
+    list-style: none ;
+    padding: 0 ;
+    margin: 0 ;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.category-item {
+    text-align: left;
+}
+
+.category-item a {
+    display: block;
+    padding: 10px 14px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--pharma-txt-main);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.category-item a:hover {
+    background-color: #f3e5f5;
+    color: var(--pharma-purple);
+}
+
+/* Active Class matching image magenta color */
+.category-item.active-cat a {
+    color: var(--pharma-pink-text) ;
+    background-color: rgba(216, 27, 96, 0.04);
+    font-weight: 700;
+}
+
+/* --- Right Main Panel Content Systems --- */
+.bda-pharma-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Clean Branded Input Search Area Bar */
+.bda-pharma-search-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.search-bar-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 1rem;
+}
+
+.bda-pharma-search-wrapper input {
+    width: 100%;
+    padding: 14px 16px 14px 44px;
+    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--pharma-txt-main);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.bda-pharma-search-wrapper input:focus {
+    border-color: var(--pharma-purple);
+    box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.08);
+}
+
+.bda-pharma-search-wrapper input::placeholder {
+    color: #94a3b8;
+}
+
+/* --- PARTIALLY RESPONSIVE HIGH-PRECISION DATA TABLE --- */
+.bda-pharma-table-viewport {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid var(--pharma-border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+    overflow: hidden;
+}
+
+.bda-pharma-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.bda-pharma-data-table thead tr {
+    background-color: var(--pharma-purple); /* ठोस डार्क पर्पल हेडर पट्टी */
+}
+
+.bda-pharma-data-table th {
+    color: #ffffff ;
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 16px 20px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.bda-pharma-data-table th:last-child {
+    border-right: none;
+}
+
+.bda-pharma-data-table td {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--pharma-border-color);
+    color: var(--pharma-txt-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    vertical-align: middle;
+}
+
+/* Zebra shading alternating rows matching picture grid */
+.bda-pharma-data-table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+.bda-pharma-data-table tbody tr:nth-child(odd) {
+    background-color: #f7f7f9;
+}
+
+.bda-pharma-data-table tbody tr:hover {
+    background-color: #f3e5f5; /* रो पर माउस ले जाने पर प्रीमियम पर्पल ग्लो इफेक्ट */
+}
+
+.brand-name-bold {
+    font-weight: 700 ;
+    color: #374151 ;
+}
+
+.composition-text-primary {
+    color: #555c66 ;
+    font-weight: 500;
+    text-align: left ;
+}
+
+/* No Results Notification Node */
+.bda-no-results-alert {
+    display: none;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--pharma-txt-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   PARTIALLY RESPONSIVE MOBILE CONFIGURATION (SWIPE PROTECTION ZONE)
+   ========================================================================== */
+@media (max-width: 950px) {
+    .bda-pharma-dashboard-layout {
+        grid-template-columns: 1fr ; /* कैटेगरी ऊपर चली जाएगी और लिस्ट नीचे */
+        gap: 20px ;
+        padding: 0 12px ;
+        margin: 15px auto ;
+    }
+
+    .bda-pharma-categories-sidebar {
+        padding: 16px 12px ;
+    }
+
+    .categories-list {
+        flex-direction: row ; /* मोबाइल टैबलेट पर कैटेगरीज एक सुंदर लेटी हुई कतार बन जाएँगी */
+        overflow-x: auto ;   /* कैटेगरीज के लिए हॉरिजॉन्टल स्वाइप चालू */
+        white-space: nowrap ;
+        padding-bottom: 6px ;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .category-item a {
+        padding: 8px 12px ;
+        font-size: 0.85rem ;
+    }
+
+    /* सबसे जरूरी फिक्स: यहाँ टेबल पिचकने के बजाय मोबाइल पर 100% सेफ स्वाइप देगी */
+    .bda-pharma-table-viewport {
+        overflow-x: auto ; /* टेबल के नीचे का हॉरिजॉन्टल स्क्रॉल एक्टिव */
+        -webkit-overflow-scrolling: touch ;
+    }
+
+    .bda-pharma-data-table {
+        min-width: 780px ; /* यह टेबल की चौड़ाई को लॉक रखता है ताकि मोबाइल पर टेक्स्ट न दबे */
+    }
+
+    .bda-pharma-data-table th, 
+    .bda-pharma-data-table td {
+        padding: 12px 14px ;
+        font-size: 0.85rem ;
+    }
+}
+/*-------------------------This Has Been Addded Later------------------------*/
+/* ==========================================================================
+   UPDATED INFRASTRUCTURE FOR EXPORT BUTTONS & ACTIONS ROWS
+   ========================================================================= */
+/* Top Summary Export Floating Bar */
+.bda-export-action-bar {
+    max-width: 1310px;
+    margin: 20px auto 0 auto;
+    padding: 14px 24px;
+    background: #ffffff;
+    border: 1px solid var(--pharma-border-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    font-family: var(--pharma-font-family);
+}
+
+.export-counter-txt {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--pharma-txt-main);
+}
+.export-counter-txt span {
+    color: var(--pharma-purple);
+    font-weight: 700;
+}
+
+.export-buttons-group {
+    display: flex;
+    gap: 12px;
+}
+
+.action-export-btn {
+    border: none ;
+    outline: none ;
+    padding: 10px 20px ;
+    border-radius: 6px ;
+    font-size: 0.88rem ;
+    font-weight: 600 ;
+    cursor: pointer ;
+    display: inline-flex ;
+    align-items: center ;
+    gap: 8px ;
+    transition: all 0.2s ;
+    font-family: inherit ;
+}
+
+/* Excel Brand Color theme Rules */
+.action-export-btn.excel-theme {
+    background-color: #107c41 ; /* Pure Microsoft Excel Green */
+    color: #ffffff ;
+}
+.action-export-btn.excel-theme:hover:not(:disabled) {
+    background-color: #0b5931 ;
+}
+
+/* WhatsApp Brand Color theme Rules */
+.action-export-btn.whatsapp-theme {
+    background-color: #25d366 ; /* WhatsApp Green */
+    color: #ffffff ;
+}
+.action-export-btn.whatsapp-theme:hover:not(:disabled) {
+    background-color: #1cbd55 ;
+}
+
+.action-export-btn:disabled {
+    background-color: #cbd5e1 ;
+    color: #94a3b8 ;
+    cursor: not-allowed ;
+}
+
+/* View Details Action Link Custom Rules */
+.row-view-details {
+    color: var(--pharma-purple) ;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-decoration: none;
+}
+.row-view-details:hover {
+    text-decoration: underline ;
+    color: var(--pharma-pink-text) ;
+}
+
+/* Row selection state dynamic background highlight */
+tr.row-is-selected {
+    background-color: rgba(106, 27, 154, 0.03) ;
+}
+
+/* Checkbox Inputs Sizing Rules inside tables */
+.bda-pharma-data-table input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+/*------------------------------category ke liye-------------*/
+.category-item {
+    cursor: pointer ;
+}
+.category-item a {
+    pointer-events: none; /* यह क्लिक इवेंट को सीधा LI टैग पर ट्रांसफर कर देगा */
+}
+
+
+/* ==========================================================================
+   UPDATED MULTI-BRAND COMPANY CHECKS INFRASTRUCTURE STYLING
+   ========================================================================== */
+
+.company-section-title {
+    margin-top: 30px ; /* कैटेगरीज से दूरी बनाने के लिए */
+}
+
+.company-checkbox-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 6px;
+    text-align: left;
+}
+
+/* Premium Custom Checkbox Alignment */
+.company-check-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--pharma-txt-main);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.company-check-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Outer custom box design matching premium layouts */
+.company-custom-box {
+    height: 18px;
+    width: 18px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.company-check-label:hover input ~ .company-custom-box {
+    border-color: var(--pharma-purple);
+}
+
+.company-check-label input:checked ~ .company-custom-box {
+    background-color: var(--pharma-purple);
+    border-color: var(--pharma-purple);
+}
+
+/* Vector check sign inside box */
+.company-custom-box::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.company-check-label input:checked ~ .company-custom-box::after {
+    display: block;
+}
+
+/* Mobile responsive fixes for companies checkboxes layout */
+@media (max-width: 950px) {
+    .company-checkbox-wrapper {
+        flex-direction: row ;
+        overflow-x: auto ;
+        white-space: nowrap ;
+        gap: 16px ;
+        padding-bottom: 8px ;
+        border-top: 1px solid var(--pharma-border-color);
+        padding-top: 14px ;
+    }
+}
+/* --- Branded Action View Details Custom Rules --- */
+.bda-pharma-data-table .row-view-details {
+    color: var(--pharma-purple) ;
+    font-weight: 600 ;
+    font-size: 0.85rem ;
+    text-decoration: none ;
+    white-space: nowrap ;
+    transition: color 0.2s ease ;
+}
+
+.bda-pharma-data-table .row-view-details:hover {
+    color: var(--pharma-pink-text) ;
+    text-decoration: underline ;
+}
+
+/* Row selected state highlight overlay tint */
+tr.row-is-selected {
+    background-color: rgba(106, 27, 154, 0.03) ;
+}
+/* --- View More Premium Action Link Styles --- */
+.bda-pharma-data-table .row-view-details {
+    color: var(--pharma-purple) ;
+    font-weight: 700 ;
+    font-size: 0.85rem ;
+    text-decoration: none ;
+    white-space: nowrap ;
+    border: 1px solid var(--pharma-purple) ;
+    padding: 6px 12px ;
+    border-radius: 6px ;
+    transition: all 0.2s ease ;
+    background: transparent;
+}
+
+.bda-pharma-data-table .row-view-details:hover {
+    color: #ffffff ;
+    background-color: var(--pharma-pink-text) ;
+    border-color: var(--pharma-pink-text) ;
+    box-shadow: 0 2px 8px rgba(216, 27, 96, 0.2) ;
+}
+/* ==========================================================================
+   UPDATED MULTI-BRAND COMPANY CHECKS & VIEW MORE BUTTON STYLING
+   ========================================================================== */
+.company-section-title {
+    margin-top: 30px ; /* कैटेगरीज से दूरी बनाने के लिए */
+}
+
+.company-checkbox-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 6px;
+    text-align: left;
+}
+
+/* Premium Custom Checkbox Alignment */
+.company-check-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--pharma-txt-main);
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.company-check-label input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Outer custom box design matching premium layouts */
+.company-custom-box {
+    height: 18px;
+    width: 18px;
+    background-color: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.company-check-label:hover input ~ .company-custom-box {
+    border-color: var(--pharma-purple);
+}
+
+.company-check-label input:checked ~ .company-custom-box {
+    background-color: var(--pharma-purple);
+    border-color: var(--pharma-purple);
+}
+
+/* Vector check sign inside box */
+.company-custom-box::after {
+    content: "";:root {
+    --pharma-purple: #6a1b9a;      
+    --pharma-pink-text: #d81b60;  
+    --pharma-bg-light: #fdfdfd;
+    --pharma-border-color: #e5e7eb;
+    --pharma-txt-main: #1f2937;
+    --pharma-txt-muted: #4b5563;
+    --pharma-font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+    margin: 0;
+    padding: 0;
+}
+
+.bda-pharma-header-banner {
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--pharma-border-color);
+    font-family: var(--pharma-font-family);
+    
+
+}
+
+.bda-pharma-header-banner h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--pharma-txt-main);
+    margin: 0;
+    letter-spacing: -0.5px;
+    
+}
+
+.bda-export-action-bar {
+    max-width: 1310px;
+    margin: 20px auto 0 auto;
+    padding: 14px 24px;
+    background: #ffffff;
+    border: 1px solid var(--pharma-border-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    font-family: var(--pharma-font-family);
+}
+
+.export-counter-txt {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--pharma-txt-main);
+}
+.export-counter-txt span {
+    color: var(--pharma-purple);
+    font-weight: 700;
+}
+
+.export-buttons-group {
+    display: flex;
+    gap: 12px;
+}
+
+.action-export-btn {
+    border: none ;
+    outline: none ;
+    padding: 10px 20px ;
+    border-radius: 6px ;
+    font-size: 0.88rem ;
+    font-weight: 600 ;
+    cursor: pointer ;
+    display: inline-flex ;
+    align-items: center ;
+    gap: 8px ;
+    transition: all 0.2s ;
+    font-family: inherit ;
+}
+
+.action-export-btn.excel-theme {
+    background-color: #107c41 ; 
+    color: #ffffff ;
+}
+.action-export-btn.excel-theme:hover:not(:disabled) {
+    background-color: #0b5931 ;
+}
+
+.action-export-btn.whatsapp-theme {
+    background-color: #25d366 ; 
+    color: #ffffff ;
+}
+.action-export-btn.whatsapp-theme:hover:not(:disabled) {
+    background-color: #1cbd55 ;
+}
+
+.action-export-btn:disabled {
+    background-color: #cbd5e1 ;
+    color: #94a3b8 ;
+    cursor: not-allowed ;
+}
+
+.bda-pharma-dashboard-layout {
+    max-width: 1350px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 260px 1fr; 
+    gap: 30px;
+    font-family: var(--pharma-font-family);
+}
+
+.bda-pharma-categories-sidebar {
+    background: #ffffff;
+    border: 1px solid var(--pharma-border-color);
+    border-radius: 12px;
+    padding: 24px 16px;
+    height: max-content;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.01);
+}
+
+.bda-pharma-categories-sidebar .sidebar-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--pharma-purple);
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid #f3e5f5;
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.categories-list {
+    list-style: none ;
+    padding: 0 ;
+    margin: 0 ;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.category-item {
+    text-align: left;
+    cursor: pointer ;
+}
+.category-item a { pointer-events: none; display: block; padding: 10px 14px; font-size: 0.92rem; font-weight: 600; color: var(--pharma-txt-main); text-decoration: none; border-radius: 6px; }
+.category-item a:hover { background-color: #f3e5f5; color: var(--pharma-purple); }
+.category-item.active-cat a { color: var(--pharma-pink-text) ; background-color: rgba(216, 27, 96, 0.04); font-weight: 700; }
+
+.company-section-title { margin-top: 30px ; }
+.company-checkbox-wrapper { display: flex; flex-direction: column; gap: 12px; padding: 10px 6px; text-align: left; }
+.company-check-label { display: inline-flex; align-items: center; gap: 10px; font-size: 0.92rem; font-weight: 500; color: var(--pharma-txt-main); cursor: pointer; user-select: none; position: relative; }
+.company-check-label input[type="checkbox"] { position: absolute; opacity: 0; width: 0; height: 0; }
+.company-custom-box { height: 18px; width: 18px; background-color: #ffffff; border: 1px solid #cbd5e1; border-radius: 4px; display: inline-block; position: relative; }
+.company-check-label:hover input ~ .company-custom-box { border-color: var(--pharma-purple); }
+.company-check-label input:checked ~ .company-custom-box { background-color: var(--pharma-purple); border-color: var(--pharma-purple); }
+.company-custom-box::after { content: ""; position: absolute; display: none; left: 6px; top: 2px; width: 4px; height: 9px; border: solid white; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.company-check-label input:checked ~ .company-custom-box::after { display: block; }
+
+.bda-pharma-main-content { display: flex; flex-direction: column; gap: 20px; }
+.bda-pharma-search-wrapper { position: relative; width: 100%; }
+.search-bar-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: #9ca3af; font-size: 1rem; }
+.bda-pharma-search-wrapper input { width: 100%; padding: 14px 16px 14px 44px; border: 1px solid #cbd5e1; background: #ffffff; border-radius: 8px; font-family: inherit; font-size: 0.95rem; color: var(--pharma-txt-main); outline: none; }
+.bda-pharma-search-wrapper input:focus { border-color: var(--pharma-purple); box-shadow: 0 0 0 3px rgba(106, 27, 154, 0.08); }
+
+.bda-pharma-table-viewport { width: 100%; background: #ffffff; border: 1px solid var(--pharma-border-color); border-radius: 12px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01); overflow: hidden; }
+.bda-pharma-data-table { width: 100%; border-collapse: collapse; text-align: left; }
+.bda-pharma-data-table thead tr { background-color: var(--pharma-purple); }
+.bda-pharma-data-table th { color: #ffffff ; font-weight: 600; font-size: 0.82rem; letter-spacing: 0.5px; text-transform: uppercase; padding: 16px 20px; border-right: 1px solid rgba(255, 255, 255, 0.1); }
+.bda-pharma-data-table th:last-child { border-right: none; }
+.bda-pharma-data-table td { padding: 16px 20px; border-bottom: 1px solid var(--pharma-border-color); color: var(--pharma-txt-muted); font-size: 0.9rem; font-weight: 500; vertical-align: middle; }
+.bda-pharma-data-table tbody tr:nth-child(even) { background-color: #fdfdfd; }
+.bda-pharma-data-table tbody tr:nth-child(odd) { background-color: #f7f7f9; }
+.bda-pharma-data-table tbody tr:hover { background-color: #f3e5f5; }
+.brand-name-bold { font-weight: 700 ; color: #374151 ; }
+.composition-text-primary { color: #555c66 ; font-weight: 500; }
+.bda-no-results-alert { display: none; padding: 40px 20px; text-align: center; color: var(--pharma-txt-muted); font-size: 0.95rem; font-weight: 500; }
+
+.bda-pharma-data-table .row-view-details {
+    color: var(--pharma-purple) ;
+    font-weight: 700 ;
+    font-size: 0.85rem ;
+    text-decoration: none ;
+    white-space: nowrap ;
+    border: 1px solid var(--pharma-purple) ;
+    padding: 6px 12px ;
+    border-radius: 6px ;
+    display: inline-block ;
+    transition: all 0.2s ease ;
+    background: transparent;
+}
+.bda-pharma-data-table .row-view-details:hover {
+    color: #ffffff ;
+    background-color: var(--pharma-pink-text) ;
+    border-color: var(--pharma-pink-text) ;
+    box-shadow: 0 2px 8px rgba(216, 27, 96, 0.2) ;
+}
+
+tr.row-is-selected { background-color: rgba(106, 27, 154, 0.03) ; }
+.bda-pharma-data-table input[type="checkbox"] { width: 16px; height: 16px; cursor: pointer; }
+
+@media (max-width: 950px) {
+    .bda-pharma-dashboard-layout { grid-template-columns: 1fr ; gap: 20px ; padding: 0 12px ; }
+    .company-checkbox-wrapper { flex-direction: row ; overflow-x: auto ; white-space: nowrap ; gap: 16px ; border-top: 1px solid var(--pharma-border-color); padding-top: 14px ; }
+    .bda-pharma-table-viewport { overflow-x: auto ; -webkit-overflow-scrolling: touch ; }
+    .bda-pharma-data-table { min-width: 820px ; }
+}
+
+    position: absolute;
+    display: none;
+    left: 6px;
+    top: 2px;
+    width: 4px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.company-check-label input:checked ~ .company-custom-box::after {
+    display: block;
+}
+
+/* --- View More Premium Action Link Outline Styles --- */
+.bda-pharma-data-table .row-view-details {
+    color: var(--pharma-purple) ;
+    font-weight: 700 ;
+    font-size: 0.85rem ;
+    text-decoration: none ;
+    white-space: nowrap ;
+    border: 1px solid var(--pharma-purple) ;
+    padding: 6px 12px ;
+    border-radius: 6px ;
+    display: inline-block ;
+    transition: all 0.2s ease ;
+    background: transparent;
+}
+
+.bda-pharma-data-table .row-view-details:hover {
+    color: #ffffff ;
+    background-color: var(--pharma-pink-text) ;
+    border-color: var(--pharma-pink-text) ;
+    box-shadow: 0 2px 8px rgba(216, 27, 96, 0.2) ;
+}
+
+/* Mobile responsive fixes for companies checkboxes layout */
+@media (max-width: 950px) {
+    .company-checkbox-wrapper {
+        flex-direction: row ;
+        overflow-x: auto ;
+        white-space: nowrap ;
+        gap: 16px ;
+        padding-bottom: 8px ;
+        border-top: 1px solid var(--pharma-border-color);
+        padding-top: 14px ;
+    }
+}
+/*========================================================================
+             BIHAR DRUGS AGENCY (BDA) - PRODUCTS MATRIX PAGE ENDS
+  ========================================================================*/    
+
